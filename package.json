@@ -1,0 +1,13 @@
+{
+    "name": "mlc-unit-tests",
+    "main": "index.ts",
+    "devDependencies": {
+        "@types/node": "^16"
+    },
+    "dependencies": {
+        "@pulumi/aws-apigateway": "^1.0.1",
+        "@pulumi/pulumi": "^3.0.0",
+        "@types/mocha": "^10.0.0",
+        "mocha": "^10.1.0"
+    }
+}
