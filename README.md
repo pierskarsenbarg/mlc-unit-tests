@@ -1,4 +1,4 @@
-# MLC unit test demos
+# MLC unit test demo
 
 To run tests:
 

@@ -6,7 +6,11 @@ pulumi.runtime.setMocks({
             case "aws-apigateway:index:RestAPI":
                 return {
                     id: "1234",
-                    state: args.inputs
+                    state: {
+                        stage: {
+                            stageName: args.inputs.stageName
+                        }
+                    }
                 }
             case "aws:apigateway:RestApi":
                 return {
@@ -41,7 +45,7 @@ describe("Infrastructure", function () {
         it("must have a stage called test", function(done) {
             infra.api.stage.stageName.apply(s => {
                 if(s !== "test") {
-                    done(new Error(`Stage name must be set to test. It's currentnly set to: ${s}`))
+                    done(new Error(`Stage name must be set to test. It's currently set to: ${s}`))
                 } else {
                     done()
                 }
